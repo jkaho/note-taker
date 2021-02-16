@@ -5,21 +5,21 @@ let newNoteBtn;
 let noteList;
 
 if (window.location.pathname === '/notes') {
-  noteTitle = document.querySelector('.note-title');
-  noteText = document.querySelector('.note-textarea');
-  saveNoteBtn = document.querySelector('.save-note');
-  newNoteBtn = document.querySelector('.new-note');
-  noteList = document.querySelectorAll('.list-container .list-group');
+    noteTitle = document.querySelector('.note-title');
+    noteText = document.querySelector('.note-textarea');
+    saveNoteBtn = document.querySelector('.save-note');
+    newNoteBtn = document.querySelector('.new-note');
+    noteList = document.querySelectorAll('.list-container .list-group');
 }
 
 // Show an element
 const show = (elem) => {
-  elem.style.display = 'inline';
+    elem.style.display = 'inline';
 };
 
 // Hide an element
 const hide = (elem) => {
-  elem.style.display = 'none';
+    elem.style.display = 'none';
 };
 
 // activeNote is used to keep track of the note in the textarea
@@ -29,12 +29,16 @@ let activeNote = {
 };
 
 const getNotes = () =>
-  fetch('/api/notes', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+    fetch('/api/notes', {
+        method: 'GET',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+    })
+    .then((response) => response.json())
+    .then((database) => {
+        renderNoteList(database);
+    });
 
 const saveNote = (note) =>
   fetch('/api/notes', {
@@ -103,7 +107,7 @@ const handleNoteView = (e) => {
   renderActiveNote();
 };
 
-// Sets the activeNote to and empty object and allows the user to enter a new note
+// Sets the activeNote to an empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
   activeNote = {};
   renderActiveNote();
