@@ -1,5 +1,6 @@
 // Dependencies 
 const fs = require('fs');
+const path = require('path');
 
 // Import db.json data 
 const database = require('../db/db.json');
@@ -15,7 +16,7 @@ module.exports = (app) => {
         database.push(req.body);
 
         // Write new db.json file
-        fs.writeFile('../db/db.json', database, (err) => {
+        fs.writeFile(path.join(__dirname, '../db/db.json'), JSON.stringify(database), (err) => {
             if (err) {
                 console.log(err);
             } else {
