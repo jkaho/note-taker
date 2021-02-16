@@ -15,7 +15,13 @@ module.exports = (app) => {
         database.push(req.body);
 
         // Write new db.json file
-        fs.writeFile('../db/db.json', json, 'utf8', database);
+        fs.writeFile('../db/db.json', database, (err) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log('File written successfully!');
+            }
+        });
 
         res.json();
     })
