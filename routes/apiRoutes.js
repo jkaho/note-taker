@@ -1,6 +1,7 @@
 // Dependencies 
 const fs = require('fs');
 const path = require('path');
+const generateUniqueId = require('generate-unique-id');
 
 // Import db.json data 
 const database = require('../db/db.json');
@@ -31,18 +32,25 @@ module.exports = (app) => {
 // Formats db.json file
 function writeJSON(database) {
     let jsonFile = `[`;
+
     for (var i = 0; i < database.length; i++) {
+        let id = generateUniqueId({
+            length: 10
+        });
+
         if (i < database.length - 1) {
             jsonFile += `
     {
         "title": "${database[i].title}",
-        "text": "${database[i].text}"
+        "text": "${database[i].text}",
+        "id": "${id}"
     },`
         } else {
             jsonFile += `
     {
         "title": "${database[i].title}",
-        "text": "${database[i].text}"
+        "text": "${database[i].text}",
+        "id": "${id}"
     }
 ]`
         }
