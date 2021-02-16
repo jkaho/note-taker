@@ -16,7 +16,7 @@ module.exports = (app) => {
         database.push(req.body);
 
         // Write new db.json file
-        fs.writeFile(path.join(__dirname, '../db/db.json'), JSON.stringify(database), (err) => {
+        fs.writeFile(path.join(__dirname, '../db/db.json'), writeJSON(database), (err) => {
             if (err) {
                 console.log(err);
             } else {
@@ -26,4 +26,26 @@ module.exports = (app) => {
 
         res.json();
     })
+}
+
+// Formats db.json file
+function writeJSON(database) {
+    let jsonFile = `[`;
+    for (var i = 0; i < database.length; i++) {
+        if (i < database.length - 1) {
+            jsonFile += `
+    {
+        "title": "${database[i].title}",
+        "text": "${database[i].text}"
+    },`
+        } else {
+            jsonFile += `
+    {
+        "title": "${database[i].title}",
+        "text": "${database[i].text}"
+    }
+]`
+        }
+    }
+    return jsonFile;
 }
