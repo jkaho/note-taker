@@ -98,8 +98,9 @@ function writeJSONDelete(database) {
         "text": "${database[i].text}",
         "id": "${database[i].id}"
     }
-]`
+`
         }
     }
+    jsonFile += ']';
     return jsonFile;
 }
