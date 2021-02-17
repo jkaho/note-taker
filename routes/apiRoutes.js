@@ -38,19 +38,21 @@ function writeJSON(database) {
             length: 10
         });
 
+        database[i].id = id;
+
         if (i < database.length - 1) {
             jsonFile += `
     {
         "title": "${database[i].title}",
         "text": "${database[i].text}",
-        "id": "${id}"
+        "id": "${database[i].id}"
     },`
         } else {
             jsonFile += `
     {
         "title": "${database[i].title}",
         "text": "${database[i].text}",
-        "id": "${id}"
+        "id": "${database[i].id}"
     }
 ]`
         }
