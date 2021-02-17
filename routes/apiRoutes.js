@@ -26,10 +26,29 @@ module.exports = (app) => {
         });
 
         res.json();
-    })
+    });
+
+    app.delete('/api/notes/:id', (req, res) => {
+        const id = req.params.id;
+        for (var i = 0; i < database.length; i++) {
+            if (database[i].id === id) {
+                database.splice(i, 1);
+            }
+        }
+
+        fs.writeFile(path.join(__dirname, '../db/db.json'), writeJSONDelete(database), (err) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log('Note successfully deleted.');
+            }
+        })
+
+        res.json();
+    });
 }
 
-// Formats db.json file
+// Formats db.json file for POST requests
 function writeJSON(database) {
     let jsonFile = `[`;
 
@@ -40,6 +59,31 @@ function writeJSON(database) {
 
         database[i].id = id;
 
+        if (i < database.length - 1) {
+            jsonFile += `
+    {
+        "title": "${database[i].title}",
+        "text": "${database[i].text}",
+        "id": "${database[i].id}"
+    },`
+        } else {
+            jsonFile += `
+    {
+        "title": "${database[i].title}",
+        "text": "${database[i].text}",
+        "id": "${database[i].id}"
+    }
+]`
+        }
+    }
+    return jsonFile;
+}
+
+// Formats db.json file for DELETE requests
+function writeJSONDelete(database) {
+    let jsonFile = `[`;
+
+    for (var i = 0; i < database.length; i++) {
         if (i < database.length - 1) {
             jsonFile += `
     {
