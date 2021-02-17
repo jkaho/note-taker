@@ -115,8 +115,8 @@ const handleRenderSaveBtn = () => {
         hide(saveNoteBtn);
     } else {
         show(saveNoteBtn);
-        console.log(noteTitle.getAttribute('readonly'))
-        console.log(noteTitle.value.trim())
+        // console.log(noteTitle.getAttribute('readonly'))
+        // console.log(noteTitle.value.trim())
     }
 };
 
