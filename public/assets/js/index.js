@@ -100,6 +100,7 @@ const handleNoteDelete = (e) => {
 // Sets the activeNote and displays it
 const handleNoteView = (e) => {
     e.preventDefault();
+    // Sets activeNote according to whether the span or li element is clicked
     if (e.target.parentElement.getAttribute('class') === 'list-group-item') {
         activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
     } else {
