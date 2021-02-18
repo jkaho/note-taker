@@ -10,6 +10,8 @@ Each note consists of a title and text body, and can be deleted when no longer n
 - JavaScript
 - Node.js
 - Express.js 
+- npm generate-unique-id package
+- Heroku
 
 ## Screenshots
 
