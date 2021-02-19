@@ -58,6 +58,7 @@ function writeJSON(database) {
         });
 
         database[i].id = id;
+        database[i].text = database[i].text.replace(/(\r\n|\n|\r)/gm, "\\n");
 
         if (i < database.length - 1) {
             jsonFile += `

@@ -3,6 +3,7 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
+let noteValue;
 
 if (window.location.pathname === '/notes') {
     noteTitle = document.querySelector('.note-title');
@@ -57,7 +58,7 @@ const renderActiveNote = () => {
         noteTitle.setAttribute('readonly', true);
         noteText.setAttribute('readonly', true);
         noteTitle.value = activeNote.title;
-        noteText.value = activeNote.text;
+        noteText.value = activeNote.text.replace(/(\\n)/gm, "\n");
     } else {
         noteTitle.removeAttribute('readonly');
         noteText.removeAttribute('readonly');
@@ -175,6 +176,14 @@ const renderNoteList = async (notes) => {
     }
 };
 
+// const handleLineBreaks = (e) => {
+//     if (e.key === 'Enter') {
+//         noteValue = e.target.value + '\\n';
+//     } else {
+//         noteValue = e.target.value;
+//     }
+// }
+
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
@@ -183,6 +192,7 @@ if (window.location.pathname === '/notes') {
     newNoteBtn.addEventListener('click', handleNewNoteView);
     noteTitle.addEventListener('keyup', handleRenderSaveBtn);
     noteText.addEventListener('keyup', handleRenderSaveBtn);
+    // noteText.addEventListener('keyup', handleLineBreaks)
 }
 
 getAndRenderNotes();
