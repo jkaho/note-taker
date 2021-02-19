@@ -4,7 +4,7 @@ const path = require('path');
 const chalk = require('chalk');
 const generateUniqueId = require('generate-unique-id');
 
-// Import db.json data 
+// Imports db.json data 
 const database = require('../db/db.json');
 
 // Routing 
@@ -43,7 +43,7 @@ module.exports = (app) => {
             } else {
                 console.log(chalk.black.bgMagenta(' Note successfully deleted. '));
             }
-        })
+        });
 
         res.json();
     });

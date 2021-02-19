@@ -3,7 +3,6 @@ let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
-let noteValue;
 
 if (window.location.pathname === '/notes') {
     noteTitle = document.querySelector('.note-title');
@@ -80,7 +79,7 @@ const handleNoteSave = () => {
 
 // Delete the clicked note
 const handleNoteDelete = (e) => {
-    // prevents the click listener for the list from being called when the button inside of it is clicked
+    // Prevents the click listener for the list from being called when the button inside of it is clicked
     e.stopPropagation();
 
     const note = e.target;
@@ -176,14 +175,6 @@ const renderNoteList = async (notes) => {
     }
 };
 
-// const handleLineBreaks = (e) => {
-//     if (e.key === 'Enter') {
-//         noteValue = e.target.value + '\\n';
-//     } else {
-//         noteValue = e.target.value;
-//     }
-// }
-
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
@@ -192,7 +183,6 @@ if (window.location.pathname === '/notes') {
     newNoteBtn.addEventListener('click', handleNewNoteView);
     noteTitle.addEventListener('keyup', handleRenderSaveBtn);
     noteText.addEventListener('keyup', handleRenderSaveBtn);
-    // noteText.addEventListener('keyup', handleLineBreaks)
 }
 
 getAndRenderNotes();
