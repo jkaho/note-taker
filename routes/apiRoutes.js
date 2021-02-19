@@ -1,6 +1,7 @@
 // Dependencies 
 const fs = require('fs');
 const path = require('path');
+const chalk = require('chalk');
 const generateUniqueId = require('generate-unique-id');
 
 // Import db.json data 
@@ -21,7 +22,7 @@ module.exports = (app) => {
             if (err) {
                 console.log(err);
             } else {
-                console.log('File written successfully!');
+                console.log(chalk.black.bgGreenBright(' Note successfully saved! '));
             }
         });
 
@@ -40,7 +41,7 @@ module.exports = (app) => {
             if (err) {
                 console.log(err);
             } else {
-                console.log('Note successfully deleted.');
+                console.log(chalk.black.bgMagenta(' Note successfully deleted. '));
             }
         })
 
