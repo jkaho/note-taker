@@ -11,7 +11,7 @@ Each note consists of a title and text body, and can be deleted when no longer n
 - Node.js
 - Express.js 
 - npm generate-unique-id package
-- Heroku
+- Heroku / Heroku Command Line Interface (CLI)
 
 ## Screenshots
 
@@ -19,4 +19,10 @@ Each note consists of a title and text body, and can be deleted when no longer n
 
 ![Note Taker notes page](images/notes.png)
 
+![Note Taker blank note](images/blank-note.png)
+
+![Note Taker new note](images/new-note.png)
+
 ## Link
+
+Deployed application: [https://shielded-spire-56696.herokuapp.com/](https://shielded-spire-56696.herokuapp.com/)
