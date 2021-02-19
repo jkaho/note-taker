@@ -2,7 +2,7 @@
 
 ## Description 
 
-This is a very simple and handy application used to write and save notes. 
+The aim of this project was to build the back end for the provided front-end code of a simple application used to write and save notes. 
 Each note consists of a title and text body, and can be deleted when no longer needed. 
 
 ## Technologies Used
@@ -14,5 +14,9 @@ Each note consists of a title and text body, and can be deleted when no longer n
 - Heroku
 
 ## Screenshots
+
+![Note Taker landing page](images/landing.png)
+
+![Note Taker notes page](images/notes.png)
 
 ## Link
