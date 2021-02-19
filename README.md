@@ -17,16 +17,16 @@ Each note consists of a title and text body, and can be deleted when no longer n
 ## Screenshots
 
 ### Landing page
-![Note Taker landing page](images/landing.png)
+![Note Taker landing page](screenshots/landing.png)
 
 ### Saved note view
-![Note Taker notes page](images/notes.png)
+![Note Taker notes page](screenshots/notes.png)
 
 ### New note - blank
-![Note Taker blank note](images/blank-note.png)
+![Note Taker blank note](screenshots/blank-note.png)
 
 ### New note - with text
-![Note Taker new note](images/new-note.png)
+![Note Taker new note](screenshots/new-note.png)
 
 ## Link
 
