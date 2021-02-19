@@ -29,4 +29,4 @@ Each note consists of a title and text body, and can be deleted when no longer n
 
 ## Link
 
-Deployed application: [shielded-spire-56696.herokuapp.com](https://shielded-spire-56696.herokuapp.com/)
+**Deployed application:** [shielded-spire-56696.herokuapp.com](https://shielded-spire-56696.herokuapp.com/)
