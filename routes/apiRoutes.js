@@ -8,6 +8,7 @@ const generateUniqueId = require('generate-unique-id');
 const database = require('../db/db.json');
 
 // Routing 
+let currentId;
 module.exports = (app) => {
     // API GET request
     app.get('/api/notes', (req, res) => res.json(database));
@@ -22,7 +23,7 @@ module.exports = (app) => {
             if (err) {
                 console.log(err);
             } else {
-                console.log(chalk.black.bgGreenBright(' Note successfully saved! '));
+                console.log(chalk.black.bgGreenBright(` Note #${currentId} successfully saved! `));
             }
         });
 
@@ -33,6 +34,7 @@ module.exports = (app) => {
         const id = req.params.id;
         for (var i = 0; i < database.length; i++) {
             if (database[i].id === id) {
+                currentId = database[i].id;
                 database.splice(i, 1);
             }
         }
@@ -41,7 +43,7 @@ module.exports = (app) => {
             if (err) {
                 console.log(err);
             } else {
-                console.log(chalk.black.bgMagenta(' Note successfully deleted. '));
+                console.log(chalk.black.bgMagenta(` Note #${currentId} successfully deleted. `));
             }
         });
 
@@ -60,6 +62,10 @@ function writeJSON(database) {
 
         database[i].id = id;
         database[i].text = database[i].text.replace(/(\r\n|\n|\r)/gm, "\\n");
+
+        if (i === database.length - 1) {
+            currentId = database[i].id;
+        }
 
         if (i < database.length - 1) {
             jsonFile += `
