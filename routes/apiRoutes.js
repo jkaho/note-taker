@@ -34,6 +34,7 @@ module.exports = (app) => {
         const id = req.params.id;
         for (var i = 0; i < database.length; i++) {
             if (database[i].id === id) {
+                // Sets currentId variable (for success message)
                 currentId = database[i].id;
                 database.splice(i, 1);
             }
@@ -56,13 +57,16 @@ function writeJSON(database) {
     let jsonFile = `[`;
 
     for (var i = 0; i < database.length; i++) {
+        // Generates unique id for each new note
         let id = generateUniqueId({
             length: 10
         });
 
+        // Sets id property of current object in database array 
         database[i].id = id;
         database[i].text = database[i].text.replace(/(\r\n|\n|\r)/gm, "\\n");
 
+        // Sets currentId variable (for success message)
         if (i === database.length - 1) {
             currentId = database[i].id;
         }
