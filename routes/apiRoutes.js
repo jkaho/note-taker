@@ -16,7 +16,7 @@ module.exports = (app) => {
     // API POST request
     app.post('/api/notes', (req, res) => {
         // Add note to database array
-        database.push(req.body);
+        database.unshift(req.body);
 
         // Write new db.json file
         fs.writeFile(path.join(__dirname, '../db/db.json'), writeJSON(database), (err) => {
@@ -64,8 +64,8 @@ function writeJSON(database) {
         // Correctly formats JSON line breaks
         database[i].text = database[i].text.replace(/(\r\n|\n|\r)/gm, "\\n");
 
-        // Sets id property of current object in database array
-        if (i === database.length - 1) {
+        // Sets id property of new note object in database array
+        if (i === 0) {
             database[i].id = id;
             currentId = database[i].id;
         }
