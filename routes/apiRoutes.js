@@ -55,19 +55,18 @@ module.exports = (app) => {
 // Formats db.json file for POST requests
 function writeJSON(database) {
     let jsonFile = `[`;
+    // Generates unique id for each new note
+    let id = generateUniqueId({
+        length: 10
+    });
 
     for (var i = 0; i < database.length; i++) {
-        // Generates unique id for each new note
-        let id = generateUniqueId({
-            length: 10
-        });
-
         // Sets id property of current object in database array 
-        database[i].id = id;
         database[i].text = database[i].text.replace(/(\r\n|\n|\r)/gm, "\\n");
 
         // Sets currentId variable (for success message)
         if (i === database.length - 1) {
+            database[i].id = id;
             currentId = database[i].id;
         }
 
