@@ -57,6 +57,7 @@ const renderActiveNote = () => {
         noteTitle.setAttribute('readonly', true);
         noteText.setAttribute('readonly', true);
         noteTitle.value = activeNote.title;
+        // Correctly formats JSON line breaks
         noteText.value = activeNote.text.replace(/(\\n)/gm, "\n");
     } else {
         noteTitle.removeAttribute('readonly');
