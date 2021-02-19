@@ -11,6 +11,7 @@ Each note consists of a title and text body, and can be deleted when no longer n
 - Node.js
 - Express.js 
 - npm generate-unique-id package
+- npm chalk
 - Heroku / Heroku Command Line Interface (CLI)
 
 ## Screenshots
