@@ -39,6 +39,9 @@ html, body {
 }
 
 /* NOTES */ 
+#notes-img {
+    margin-bottom: 100px;
+}
 /* .note-wrapper {
     position: relative;
     z-index: 10;
