@@ -1,7 +1,27 @@
 [
     {
-        "title": "Hello",
-        "text": "Note",
-        "id": "2x5h96aejh"
+        "title": "Shopping list",
+        "text": "- Lightbulbs\n- Chips\n- Broccoli ",
+        "id": "f5oc2famf2"
+    },
+    {
+        "title": "Max's birthday",
+        "text": "Buy present and cake",
+        "id": "qwitkeg02q"
+    },
+    {
+        "title": "Call Simone",
+        "text": "Ask about plans",
+        "id": "v8lb9njjx1"
+    },
+    {
+        "title": "Project ideas",
+        "text": "Idea",
+        "id": "7p8lj7egln"
+    },
+    {
+        "title": "Songs to download",
+        "text": "1. Fave song",
+        "id": "d8ab10rynf"
     }
 ]
