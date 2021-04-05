@@ -190,6 +190,23 @@ html, body {
   cursor: pointer;
 }
 
+footer {
+    background: #F6F2E9;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    z-index: 15;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#footer-link a {
+    width: fit-content;
+    color: grey;
+    text-decoration: none;
+}
+
 @media (max-width: 450px) {
     #logo-img {
         width: 300px;
