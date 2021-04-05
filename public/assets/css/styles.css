@@ -27,7 +27,7 @@ html, body {
 } */
 
 #logo-img {
-    padding-top: 10%;
+    padding-top: 100px;
 }
 
 /* NOTES */ 
@@ -174,4 +174,11 @@ html, body {
   border-right: none;
   padding: 20px;
   cursor: pointer;
+}
+
+@media (max-width: 450px) {
+    #logo-img {
+        width: 300px;
+        padding-top: 55px;
+    }
 }

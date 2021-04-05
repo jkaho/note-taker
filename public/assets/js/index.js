@@ -191,9 +191,9 @@ getAndRenderNotes();
 // Changes landing page image according to screen size
 const notesImg = document.getElementById("notes-img");
 function responsiveNotesImg() {
-    if (window.innerWidth > 1200) {
+    if (window.innerWidth > 950) {
         notesImg.setAttribute("src", "assets/images/notes-lg.png");
-    } else if (window.innerWidth > 750 && window.innerWidth <= 1200) {
+    } else if (window.innerWidth > 550 && window.innerWidth <= 950) {
         notesImg.setAttribute("src", "assets/images/notes-md.png");
     } else {
         notesImg.setAttribute("src", "assets/images/notes-sm.png");
