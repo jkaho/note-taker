@@ -31,7 +31,7 @@ html, body {
 } */
 
 #logo-img {
-    padding-top: 100px;
+    padding-top: 5%;
 }
 
 #nav-logo-img {
@@ -211,6 +211,5 @@ footer {
 @media (max-width: 450px) {
     #logo-img {
         width: 300px;
-        padding-top: 55px;
     }
 }
