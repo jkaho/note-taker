@@ -187,3 +187,18 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
+
+// Changes landing page image according to screen size
+const notesImg = document.getElementById("notes-img");
+function responsiveNotesImg() {
+    if (window.innerWidth > 1200) {
+        notesImg.setAttribute("src", "assets/images/notes-lg.png");
+    } else if (window.innerWidth > 750 && window.innerWidth <= 1200) {
+        notesImg.setAttribute("src", "assets/images/notes-md.png");
+    } else {
+        notesImg.setAttribute("src", "assets/images/notes-sm.png");
+    }
+};
+
+responsiveNotesImg();
+window.addEventListener("resize", responsiveNotesImg);

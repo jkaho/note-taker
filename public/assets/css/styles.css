@@ -11,10 +11,13 @@ html, body {
 }
 
 .container {
+    position: absolute;
+    z-index: 5;
     text-align: center;
     padding: 0;
     max-width: none;
     width: 100%;
+    height: 100%;
 }
 
 /* .jumbotron {
@@ -23,16 +26,84 @@ html, body {
     height: 300px;
 } */
 
-.note-img {
-    position: fixed;
+#logo-img {
+    padding-top: 10%;
 }
+
+/* NOTES */ 
+/* .note-wrapper {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.note-img {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+}
+
+#note-darkgreen {
+    top: 40%;
+    left: 28%;
+}
+
+#note-yellow {
+    top: 40%;
+    left: 43%;
+}
+
+#note-blue-2 {
+    top: 40%;
+    left: 58%;
+}
+
+#note-orange {
+    top: 57%;
+    left: 28%;
+}
+
+#note-purple {
+    top: 57%;
+    left: 43%;
+}
+
+#note-pink {
+    top: 57%;
+    left: 58%;
+}
+
+#note-red {
+    top: 40%;
+    left: 73%;
+}
+
+#note-green {
+    top: 57%;
+    left: 73%;
+    width: 160px;
+    height: 160px;
+}
+
+#note-blue {
+    top: 25%;
+    left: 75%;
+}
+
+#note-orange-2 {
+    top: 75%;
+    left: 10%;
+} */
 
 .get-started {
     text-align: center;
     font-family: 'Red Hat Display', sans-serif;    
     display: block;
     width: 200px;
-    margin: 0 auto;
+    margin: 20px auto;
     border: solid 2px rgb(44, 163, 80);
     color: rgb(44, 163, 80);
     border-radius: 30px;
