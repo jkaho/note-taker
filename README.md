@@ -2,8 +2,11 @@
 
 ## Description 
 
-The aim of this project was to build the back end for the provided front-end code of a simple application used to write and save notes. 
-Each note consists of a title and text body, and can be deleted when no longer needed. 
+*Note Taker* is a simple note-taking application where each note consists of a title and text body, and can be deleted when no longer needed. 
+
+## Development 
+
+The aim of this project was to build the back end for the provided front-end code. 
 
 ## Technologies Used
 
